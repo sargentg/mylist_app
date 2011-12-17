@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My List</title>
+    <link rel="stylesheet" href="/stylesheets/mylist.css" type="text/css" media="screen" charset="utf-8" />
+    <script type="text/javascript" src="/javascripts/jquery.js" charset="utf-8" ></script>
+    <script type="text/javascript" src="/javascripts/mylistCode.js" charset="utf-8" ></script>
+    
+    <!-- jQuery UI files
+          Because jQuery UI theme roller puts its theme files into a folder
+          named css and js, I stuck with it to keep them separated from the
+          other css and javascript files
+     -->
+     <link type="text/css" href="/css/smoothness/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
+     <script type="text/javascript" src="/js/jquery-1.6.2.min.js"></script>
+     <script type="text/javascript" src="/js/jquery-ui-1.8.16.custom.min.js"></script>
+    
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <h3>My List</h3>
+        <ul id='mylist1'>
+          <!-- These are examples. The actual values are loaded via javascript 
+          <li><input type='checkbox' /><span>tomorrow</span></li>
+          <li><input type='checkbox' /><span>today</span></li>
+          -->
+        </ul>   
+             
+        <a id="addItem" href="#">Add another Item</a>
+        
+        <!-- user fills in new record node here -->
+        <div id="newListItemContainer">
+          <input type='text' placeholder="Your list item xx" val = ""/>
+          <br />
+          <button>+ Add this item</button> <a id="closeLink" href="#">Close</a>
+        </div>
+      </fieldset>
+    </form>
+
+    <!------------------- templates for list items ---------------->
+    <div id="templates" >
+      <div id="listItem">
+        <li><input type='checkbox' /><span>---</span></li>
+      </div>
+      
+    </div>
+    
+    <div id="console">
+    </div>
+  </body>
+</html>

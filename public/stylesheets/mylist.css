@@ -1,0 +1,55 @@
+body {
+	/* background-color: silver; */
+	font-family: "Lucida Grande",verdana,arial,helvetica,sans-serif;
+
+}
+h3 {
+	margin-top: 0px;
+}
+ul#mylist1 {
+	list-style-type: none;
+	font-size: 18px;
+}
+ul#mylist1 li {
+	margin-left: -10px;
+
+}
+ul#mylist1 li span {
+	margin-left: 8px;
+}	
+#newListItemContainer {
+	display: none;
+	margin-left: 30px;
+}
+#newListItemContainer input {
+	width: 40em;
+}
+#newListItemContainer button {
+	margin-top: 20px;
+	font-weight: bold;
+	/* background-color: #CCE6FF; */
+}
+#newListItemContainer a {
+	color: red;
+	margin-left: 10px;
+}
+#newListItemContainer a:hover {
+	color: white;
+	background-color: red;
+}
+
+
+
+
+#templates {
+	display: none;
+
+}
+
+fieldset {
+	border: 1px solid gray;
+}
+#addItem {
+	color: red;
+	margin-left: 30px;
+}
