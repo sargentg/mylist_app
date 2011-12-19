@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My List</title>
+    <title>My List assignment, Sargent</title>
     <link rel="stylesheet" href="/stylesheets/mylist.css" type="text/css" media="screen" charset="utf-8" />
     <script type="text/javascript" src="/javascripts/jquery.js" charset="utf-8" ></script>
     <script type="text/javascript" src="/javascripts/mylistCode.js" charset="utf-8" ></script>
@@ -30,25 +30,33 @@
 
           <div id="lowerMenu">  
             <a id="addItem" href="#">Add another item</a>
-            <a id="editList">edit</a>
+            <a id="editList" href="#">Edit</a>
           </div>
 
           <!-- user fills in new record node here -->
           <div id="newItemContainer">
             <input type='text' placeholder="Your list item" val = ""/>
             <br />
-            <button>+ Add this item</button> <a id="closeLink" href="#">Close</a>
+            <button>+ Add this item</button> or <a id="closeLink" href="#">Close</a>
           </div>
         </div>
         
         
         <div id="editModeContainer">
           <h3>Edit this list</h3>
-          <h5>ITEMS</h5>
+          <hr />
+          <p>ITEMS</p>
           <ul id="mylist2">
             <!-- to be populated with items from #mylist1 -->
-            <li>Humpty dumpty</li>
+            <!-- following is a sample of the list item to be constructed from #mylist1
+            <li><input class="editText" /> <a href="#"><img src="/images/grey_delete.gif" alt="delete"></a></li>
+            -->
           </ul>
+          
+          <div class="menu">
+            <button id="save">Save this list</button> or 
+            <a href="#">Cancel</a>
+          </div>
         </div>
         
         
@@ -61,6 +69,9 @@
         <li><input type='checkbox' /><span>---</span></li>
       </div>
       
+      <div id="editItem">
+        <li><input class="editText" /> <a href="#"><img src="/images/grey_delete.gif" alt="delete"></a></li>
+      </div>
     </div>
     <!------------------- end templates --------------------------->
     <div id="console">

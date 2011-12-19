@@ -7,6 +7,7 @@ h3 {
 	margin-top: 0px;
 }
 
+
 /* MAIN MODE CONTAINER ------------------------------------ */
 div#mainModeContainer {
 	border: 1px dashed red;
@@ -42,6 +43,7 @@ ul#mylist1 li span {
 }
 #lowerMenu #editList{
 	margin-left: 10px;
+	color: red;
 }
 
 
@@ -77,11 +79,50 @@ ul#mylist1 li span {
 /* EDIT MODE CONTAINER ------------------------------------ */
 
 #editModeContainer {
-	display: block;
+	display: none;             /* start hidden -- show later */
 	/* margin-left: 30px; */
-	border: 1px dotted black;
+	border: 1px dotted green;
 }
 
+#editModeContainer h3 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#editModeContainer p {
+	margin-top: 10px;
+	color: saddlebrown;
+}
+#editModeContainer li {
+	list-style-type: none;
+	border: 1px dotted orange;
+	margin-left: -30px;
+	padding: 5px;
+}
+#editModeContainer .editText {
+	width: 90%;
+	font-size: 18px;
+}
+
+
+/* EDIT MODE CONTAINER -- MENU ---------------------------- */
+#editModeContainer div.menu {
+	margin-left: 10px;
+	background-color: #F0F0F0;
+	font-size: 75%;
+	padding: 5px;
+}
+#editModeContainer div.menu button {
+	font-weight: bold;
+}
+#editModeContainer div.menu a {
+	color: red;
+}
+#editModeContainer div.menu a:hover {
+	text-decoration: none;
+	color: white;
+	background-color: red;
+}
 
 /* TEMPLATES ---------------------------------------------- */
 #templates {

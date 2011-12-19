@@ -79,6 +79,28 @@ $(function(){
 		return false;
 	});
 
+	// hyperlink click handler - edit hyperlink
+	$("a#editList").click(function(event){
+		$("#mainModeContainer").hide();
+		$("#editModeContainer").show();
+		// now copy every list item in the mainModeContainer to the editModeContainer
+		$("#mainModeContainer ul#mylist1 span").each(function(){
+			var el = $(this);
+			appendConsole(el.html());
+			$("#editModeContainer ul#mylist2").append(makeValObject("editItem", el.html()));
+		})
+		
+		
+		
+		
+	})
+
+	// hyperlink click handler - cancel edit mode
+	$("#editModeContainer div.menu a").click(function(event){
+		$("#mainModeContainer").show();
+		$("#editModeContainer").hide();		
+	})
+
 });
 // end jQuery document ready handler
 	
@@ -87,9 +109,16 @@ $(function(){
 // construct objects from the templates below
 function makeObject(templateId, contentsString){
 	// get template node,
-	// set it's contents (contained in a <span>)
+	// set its contents (contained in a <span>)
 	var newTemplateItem = $('#' + templateId).html();
 	return $("span", newTemplateItem).html(contentsString).end(); 
+}
+function makeValObject(templateId, contentsString){
+	// get template node,
+	// set its value (not contents). HTML <input> field take a value
+	//appendConsole(templateId + "--" + contentsString);
+	var newTemplateItem = $('#' + templateId).html();
+	return $("input", newTemplateItem).val(contentsString).end();
 }
 
 // utility
