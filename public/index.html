@@ -19,22 +19,39 @@
   <body>
     <form>
       <fieldset>
-        <h3>My List</h3>
-        <ul id='mylist1'>
-          <!-- These are examples. The actual values are loaded via javascript 
-          <li><input type='checkbox' /><span>tomorrow</span></li>
-          <li><input type='checkbox' /><span>today</span></li>
-          -->
-        </ul>   
-             
-        <a id="addItem" href="#">Add another Item</a>
-        
-        <!-- user fills in new record node here -->
-        <div id="newListItemContainer">
-          <input type='text' placeholder="Your list item xx" val = ""/>
-          <br />
-          <button>+ Add this item</button> <a id="closeLink" href="#">Close</a>
+        <div id="mainModeContainer">
+          <h3>My List</h3>
+          <ul id='mylist1'>
+            <!-- These are examples. The actual values are loaded via javascript 
+            <li><input type='checkbox' /><span>tomorrow</span></li>
+            <li><input type='checkbox' /><span>today</span></li>
+            -->
+          </ul>   
+
+          <div id="lowerMenu">  
+            <a id="addItem" href="#">Add another item</a>
+            <a id="editList">edit</a>
+          </div>
+
+          <!-- user fills in new record node here -->
+          <div id="newItemContainer">
+            <input type='text' placeholder="Your list item" val = ""/>
+            <br />
+            <button>+ Add this item</button> <a id="closeLink" href="#">Close</a>
+          </div>
         </div>
+        
+        
+        <div id="editModeContainer">
+          <h3>Edit this list</h3>
+          <h5>ITEMS</h5>
+          <ul id="mylist2">
+            <!-- to be populated with items from #mylist1 -->
+            <li>Humpty dumpty</li>
+          </ul>
+        </div>
+        
+        
       </fieldset>
     </form>
 
@@ -45,7 +62,7 @@
       </div>
       
     </div>
-    
+    <!------------------- end templates --------------------------->
     <div id="console">
     </div>
   </body>

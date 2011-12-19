@@ -18,14 +18,23 @@ $(function(){
 	/* ---------------- event bindings ------------------------ */
 	// click handler for Add another item hyperlink
 	$('#addItem').click(function(){
-		$("#newListItemContainer").show();
-		$("#newListItemContainer input").focus();
+		$("#lowerMenu").hide();
+		$("#newItemContainer").show();
+		$("#newItemContainer input").focus();
 	});
 
 	// keypress event handler
-	$('#newListItemContainer input').live('keypress', function(event){
+	$('#newItemContainer input').live('keypress', function(event){
 		var el  = $(this);
+		//var key = event.which;
 		var key = event.which;
+		var keyCode = event.keyCode;
+		
+		// convert a TAB (9) into an ENTER (13)
+		if (keyCode == 9) {
+			key = 13;
+		}
+		appendConsole("key: " + key + "-- keyCode: " + keyCode);
 		switch(key){
 			
 			case 13: // ENTER
@@ -36,13 +45,15 @@ $(function(){
 				return false;
 				break;
 				
-			case 27: // ESC
-			case  0: // alternate (apple keyboard seems to send 0 for ESC)
+			case  0: // all control keys return key = 0. Must use keyCode
+			if (keyCode == 27) {
 				appendConsole("Got ESC --" + this.tagName + "--" + el.val());
 				el.val("");
-				$("#newListItemContainer").hide();
+				$("#newItemContainer").hide();
+				$("#lowerMenu").show();
 				return false;
 				break;
+			}
 				
 			default: // not interested in anythingelse
 				break; // keep going don't stop the bubble
@@ -50,8 +61,8 @@ $(function(){
 	});
 
 	// button click handler - Add this item Button
-	$("#newListItemContainer button").click(function(event){
-		var el = $("#newListItemContainer input");
+	$("#newItemContainer button").click(function(event){
+		var el = $("#newItemContainer input");
 		appendConsole("clicked BUTTON -- " + el.val());
 		$('#mylist1').append(makeObject("listItem", el.val()));
 		el.val("");
@@ -60,10 +71,11 @@ $(function(){
 	
 	
 	// hyperlink click handler - close hyperlink when adding new todo item
-	$("#newListItemContainer a").click(function(event){
+	$("#newItemContainer a").click(function(event){
 		appendConsole("clicked CLOSE link");
-		$("#newListItemContainer input").val("");
-		$("#newListItemContainer").hide();
+		$("#newItemContainer").hide();
+		$("#newItemContainer input").val("");
+		$("#lowerMenu").show();
 		return false;
 	});
 

@@ -6,9 +6,15 @@ body {
 h3 {
 	margin-top: 0px;
 }
+
+/* MAIN MODE CONTAINER ------------------------------------ */
+div#mainModeContainer {
+	border: 1px dashed red;
+}
 ul#mylist1 {
 	list-style-type: none;
 	font-size: 18px;
+	border: 1px dotted blue;
 }
 ul#mylist1 li {
 	margin-left: -10px;
@@ -17,30 +23,67 @@ ul#mylist1 li {
 ul#mylist1 li span {
 	margin-left: 8px;
 }	
-#newListItemContainer {
+
+
+/* LOWER MENU --------------------------------------------- */
+#lowerMenu {
+	font-size: 75%;
+	color: red;
+}
+#lowerMenu #addItem:hover,
+#lowerMenu #editList:hover {
+	text-decoration: none;
+	color: white;
+	background-color: red;	
+}
+#lowerMenu #addItem {
+	margin-left: 60px;
+	color: red;
+}
+#lowerMenu #editList{
+	margin-left: 10px;
+}
+
+
+
+/* NEW ITEM CONTAINER ------------------------------------- */
+#newItemContainer {
 	display: none;
 	margin-left: 30px;
 }
-#newListItemContainer input {
+#newItemContainer input {
 	width: 40em;
 }
-#newListItemContainer button {
+#newItemContainer button {
 	margin-top: 20px;
 	font-weight: bold;
 	/* background-color: #CCE6FF; */
 }
-#newListItemContainer a {
+#newItemContainer a {
 	color: red;
 	margin-left: 10px;
+	font-size: 75%;
 }
-#newListItemContainer a:hover {
+#newItemContainer a:hover {
 	color: white;
 	background-color: red;
+	text-decoration: none;
 }
 
 
 
 
+
+/* EDIT MODE CONTAINER ------------------------------------ */
+
+#editModeContainer {
+	display: block;
+	/* margin-left: 30px; */
+	border: 1px dotted black;
+}
+
+
+/* TEMPLATES ---------------------------------------------- */
 #templates {
 	display: none;
 
@@ -49,7 +92,4 @@ ul#mylist1 li span {
 fieldset {
 	border: 1px solid gray;
 }
-#addItem {
-	color: red;
-	margin-left: 30px;
-}
+
